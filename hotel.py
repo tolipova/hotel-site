@@ -1,44 +1,44 @@
 class Room:
-    def __init__(self,number,status):
-        self.number = number
-        self.status = status
+   def __init__(self,number,status):
+      self.number = number
+      self.status = status
 
 class Hotel:
-    def __init__(self):
-        self.rooms = []
+   def __init__(self):
+      self.rooms = []
 
-    def add_room(self,room):
+   def add_room(self,room):
       self.rooms.append(room)
 
-    def find_room(self,number):
+   def find_room(self,number):
       for room in self.rooms:
          if room.number == number:
-           return room
-         return None
+            return room
+      return None
 
-    def check_in(self,number):
-       room = self.find_room(number)
-       if room is not None:
-          room.status = "occupied"
-          print(f"{room.number}th room is occupied! ")
+   def check_in(self,number):
+      room = self.find_room(number)
+      if room is not None:
+         room.status = "occupied"
+         print(f"{room.number}th room is occupied! ")
 
-       else:
-          print("check_in is error")
+      else:
+         print("check_in is error")
 
-    def check_out(self,number):
-     room = self.find_room(number)     
-     if room is not None:
+   def check_out(self,number):
+      room = self.find_room(number)     
+      if room is not None:
           room.status = "vacant"
           print(f"{room.number}th room is vacant!")
 
-     else:
-          print("error")  
+      else:
+         print("error")  
 
 
-    def display_room(self):
-       print("All our Rooms: ")   
-       for room in self.rooms:
-          print(f"{room.number}:{room.status}")
+   def display_room(self):
+      print("All our Rooms: ")   
+      for room in self.rooms:
+         print(f"{room.number}:{room.status}")
 
 hotel = Hotel()
 hotel.add_room(Room("101","vacant"))
